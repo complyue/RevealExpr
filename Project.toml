@@ -1,0 +1,8 @@
+name = "RevealExpr"
+uuid = "93572fca-e705-4385-8501-dab7158c046e"
+authors = ["ComplYue <compl.yue@icloud.com>"]
+version = "0.1.0"
+
+[deps]
+REPL = "3fa0cd96-eef1-5676-8a61-b3b8758bbffb"
+ReplMaker = "b873ce64-0db9-51f5-a568-4457d8e49576"
