@@ -30,9 +30,15 @@ function __init__()
     return Expr(:quote, Expr(:block, xs...))
   end
 
-  function is_complete_julia(s)
+  function is_complete_julia(s)::Bool
     input = String(take!(copy(LineEdit.buffer(s))))
-    return parse_multi(input) !== missing
+    try
+      return parse_multi(input) !== missing
+    catch e
+      print(stdout, "\n!! Bad Syntax -- ")
+      showerror(stderr, e, catch_backtrace())
+      return false
+    end
   end
 
   initrepl(dump_expr_by_src,
